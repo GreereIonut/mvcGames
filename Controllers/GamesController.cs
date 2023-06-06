@@ -5,14 +5,19 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using mvcGames.Models;
 
 namespace mvcGames.Controllers
 {
     
     public class GamesController : Controller
     {
-       public string Index(){
-        return "Games Controller";
+
+
+       public IActionResult Index(){
+
+        GamesViewModel game =new GamesViewModel(){Id=1,Title="Dota2",Description="Best MOBA"};
+        return View(game);
        }
 
        public string Hello(){
