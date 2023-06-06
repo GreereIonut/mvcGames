@@ -12,12 +12,28 @@ namespace mvcGames.Controllers
     
     public class GamesController : Controller
     {
+        public GamesController()
+        {
+
+        }
+        private static List<GamesViewModel> games=new List<GamesViewModel>();
+
+        //Dislpay
+        public IActionResult Index(){
 
 
-       public IActionResult Index(){
+        return View(games);
+       }
+        //Create
+       public IActionResult Create(){
+        var gameVm=new GamesViewModel();
 
-        GamesViewModel game =new GamesViewModel(){Id=1,Title="Dota2",Description="Best MOBA"};
-        return View(game);
+        return View(gameVm);
+       }
+       public IActionResult CreateGame(GamesViewModel gamesViewModel){
+        // return View("Index");
+        games.Add(gamesViewModel);
+        return RedirectToAction(nameof(Index));
        }
 
        public string Hello(){

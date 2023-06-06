@@ -1,4 +1,4 @@
-@model mvcGames.Models.GamesViewModel
+@model IEnumerable<mvcGames.Models.GamesViewModel>
 
 
 @{
@@ -7,8 +7,19 @@
 
 <h1>@ViewData["Title"]</h1>
 
+
+<ul>
+  @foreach (var game in Model)
+    {
+
+        <li>@game.Title</li>
+        <li>@game.Description</li>
+        <hr />
+        
+        
+    }
+
+</ul>
 <div>
-    <h4>This game is named: @Model.Title very cool</h4>
-    <h4>Brief description: @Model.Description</h4>
- 
+   
 </div>
