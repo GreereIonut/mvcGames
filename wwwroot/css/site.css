@@ -20,3 +20,15 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.game-info{
+  display: inline-block;
+    vertical-align: top;
+    
+}
+
+.reviewsBtn{
+  display: flex;
+    justify-content: center;
+
+}

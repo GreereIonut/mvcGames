@@ -8,18 +8,19 @@
 <h1>@ViewData["Title"]</h1>
 
 
-<ul>
-  @foreach (var game in Model)
-    {
 
-        <li>@game.Title</li>
-        <li>@game.Description</li>
-        <hr />
-        
-        
-    }
 
-</ul>
-<div>
+@foreach (var game in Model){
+
+        <div class="game-info "  >@game.Title </div>
+         <div class="reviewsBtn  ">
+
+         <form asp-controller="Games" asp-action="Details" > 
+            <button type="submit">Details</button>
+         </form>
+
+    </div>
+        <div class=" mb-3">@game.Description</div>
    
-</div>
+}
+

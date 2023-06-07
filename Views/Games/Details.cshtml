@@ -1,0 +1,30 @@
+@page
+@model mvcGames.Models.GamesViewModel
+
+
+
+
+
+<h2>Reviews</h2>
+
+@* @if (Model.Reviews.Any())
+{
+    foreach (var review in Model.Reviews)
+    {
+        <div class="review">
+            <h4>Username: @review.userName</h4>
+            <p>Comment: @review.Comment</p>
+            <p>Rating: @review.Stars</p>
+        </div>
+    }
+}
+else
+{
+    <p>No reviews available.</p>
+}
+
+<div class="reviewsBtn">
+    <form asp-controller="Game" asp-action="Reviews" asp-route-id="@Model.Id">
+        <button type="submit">Add Review</button>
+    </form>
+</div> *@
