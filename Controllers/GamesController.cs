@@ -10,37 +10,37 @@ using mvcGames.Models;
 
 namespace mvcGames.Controllers
 {
-    
+
     public class GamesController : Controller
     {
         private readonly ApplicationDbContext _db;
         public GamesController(ApplicationDbContext db)
         {
-            _db=db;
+            _db = db;
         }
 
         //Dislpay
-        public IActionResult Index(){
-            IEnumerable<GamesViewModel> game=_db.Games;
+        public IActionResult Index()
+        {
+            IEnumerable<GamesViewModel> game = _db.Games;
 
-        return View(game);
-       }
+            return View(game);
+        }
         //Create
-       public IActionResult Create(){
+        public IActionResult Create()
+        {
 
-        return View();
-       }
-       [HttpPost]
-       [ValidateAntiForgeryToken]
-       public IActionResult Create(GamesViewModel game){
-        _db.Games.Add(game);
-        _db.SaveChanges();
-        return RedirectToAction(nameof(Index));
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(GamesViewModel game)
+        {
+            _db.Games.Add(game);
+            _db.SaveChanges();
+            return RedirectToAction(nameof(Index));
+        }
+      
 
-       }
-
-       public string Hello(){
-        return "Hello Games Action Controller";
-       }
-    } 
+    }
 }

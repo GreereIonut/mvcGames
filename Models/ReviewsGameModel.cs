@@ -20,6 +20,9 @@ namespace mvcGames.Models
 
         [ForeignKey("GamesViewModel")]
         public int gameId { get; set; }
+
+        public List<ReviewsGameModel> Reviews { get; set; }
+
         public GamesViewModel GamesViewModel { get; set; }
 
 

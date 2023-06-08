@@ -15,8 +15,8 @@
         <div class="game-info "  >@game.Title </div>
          <div class="reviewsBtn  ">
 
-         <form asp-controller="Games" asp-action="Details" > 
-            <button type="submit">Details</button>
+         <form asp-controller="Reviews" asp-action="InsertReview" asp-route-game-Id="@game.Id" > 
+            <button type="submit">Reviews</button>
          </form>
 
     </div>
